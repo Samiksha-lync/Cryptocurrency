@@ -10,7 +10,7 @@ import Coins from './components/Coins/Coins.jsx'
 import Exchanges from './components/Exchanges/Exchanges.jsx'
 
 const router = (
-    <BrowserRouter basename="/Cryptocurrency">
+    <BrowserRouter basename="/cryptocurrency">
       <Routes>
         <Route path= "/" element= {<Layout />}>
         <Route index element={<Home />}/>
