@@ -45,8 +45,8 @@ const Exchanges = () => {
         }
     };
     const showInitialExchanges = () => {
-        setData(data.slice(0, 10)); // Show only initial 10 items
-        setShowAll(false); // Set showAll to false to indicate not all exchanges are shown
+        setData(data.slice(0, 10)); 
+        setShowAll(false); 
     };
 
 
@@ -57,8 +57,8 @@ const Exchanges = () => {
     if (error) {
         return (
             <p className="error-msg">
-            We are facing some issues. <br />
-            Please check again after some time.
+           ERROR!!! <br />
+            
         </p>
         );  
     }
@@ -70,21 +70,27 @@ const Exchanges = () => {
 
 
     return (
-        <div className="exchanges-container">
+    <div className="exchanges-container">
             <div className="headings">
-            Top Exchanges
+                Top Exchanges
             </div>
             <div className="all-cards">
+
               {data.map((exchange) => (
                   <div key={exchange.id} className="exchange-item">
+
                     <div className="exchange-ranking">
-                        {exchange.trust_score_rank}</div>
+                        {exchange.trust_score_rank}
+                    </div>
+
                     <div className="exchange-img">
                         <img src={exchange.image} alt={exchange.name} />
                     </div>
+
                     <p title={exchange.name} className="exchange-name">{exchange.name}</p>
+
                     <span className="exchange-link">
-                        <a href={exchange.url} target="_blank" rel="noopener noreferrer">
+                        <a href={exchange.url} target="_blank">
                             <img src={icon} alt="link" />
                         </a>
                     </span>

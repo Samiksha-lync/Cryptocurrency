@@ -14,12 +14,12 @@ const Coins = () => {
         
         const fetchData = async () => {
             try {
-                const response = await fetch('https://api.coingecko.com/api/v3/exchanges');
+                const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=${page}');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const result = await response.json();
-                setData(result.slice(0,10));  
+                setData(result);  
                 console.log(response);
             } catch (err) {
                 setError(err.message);  
@@ -42,7 +42,7 @@ const Coins = () => {
     const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = (searchTerm) => {
-    // Perform search logic here (e.g., fetch data from an API, filter local data)
+    
     console.log("Performing search for:", searchTerm);
     
     setSearchResults([  ]);

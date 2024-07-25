@@ -6,7 +6,7 @@ const SearchBar = ({ onSearch }) => {
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
-    onSearch(event.target.value); // Notify parent component of the search term
+    onSearch(event.target.value); 
   };
 
   return (
