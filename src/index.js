@@ -11,7 +11,7 @@ import Exchanges from './components/Exchanges/Exchanges.jsx'
 
 const router = createBrowserRouter(
    createRoutesFromElements(
-    <BrowserRouter basename="/cryptocurrency">
+    <BrowserRouter basename="/Cryptocurrency">
     <Route path= '/' element= {<Layout />}>
       <Route path = '' element={<Home />}/>
       <Route path="Coins/" element={<Coins />}/>
