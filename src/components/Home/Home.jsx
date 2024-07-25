@@ -9,7 +9,12 @@ function Home(){
         <div className="main-container ">
             <div className="img-container">
                 <div className="image">
-                   <img src={icon} alt="bitcoin" style={{height:'42%', width:'42%'}}/>
+                <img
+                  src={icon}
+                  alt="bitcoin"
+                  className="image-1"
+                  
+                />
                 </div>
                 <div className="text">
                     <div className="heading">
