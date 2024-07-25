@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import './Coins.css'
+import SearchBar from './SearchBar'
 
 const Coins = () => {
     
@@ -30,6 +31,23 @@ const Coins = () => {
         fetchData();  
     }, []);  
 
+
+    const [selectedOption, setSelectedOption] = useState('');
+    const [searchTerm, setSearchTerm] =useState('');
+
+    const OptionChange = (e) => {
+        setSelectedOption(e.target.value);
+    }
+
+    const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearch = (searchTerm) => {
+    // Perform search logic here (e.g., fetch data from an API, filter local data)
+    console.log("Performing search for:", searchTerm);
+    
+    setSearchResults([  ]);
+  };
+
     return(
         <div className="main">
             <div className="title">
@@ -39,27 +57,44 @@ const Coins = () => {
                 <div className="buttons-container">
                     <div className="inr-btn">
                         <input type="radio"
+                        name="currencysymbolbtn"
                         value="inr"
+                        id="inr"
+                        checked={selectedOption === "inr"}
+                        onChange={OptionChange}
                         />
                         <label>INR</label>
                     </div>
                     <div className="usd-btn">
                         <input type="radio"
                         value="usd"
+                        checked={selectedOption === "usd"}
+                        onChange={OptionChange}
                         />
                         <label>USD</label>
                     </div>
                     <div className="eur-btn">
                         <input type="radio"
                         value="eur"
+                        checked={selectedOption === "eur"}
+                        onChange={OptionChange}
                         />
                         <label>EUR</label>
                     </div>
                 </div>
+                <div className="search-bar">
+                <SearchBar onSearch={handleSearch} />
+                 {}
+                    <ul>
+                   {searchResults.map(result => (
+                    <li key={result.id}>{result.name}</li>
+                  ))}
+                   </ul>
+                </div>
 
             </div>
             <div className="cards-container">
-                
+            
             </div>
         </div>
     )

@@ -6,7 +6,10 @@
    align-items: center;
    flex-wrap: wrap;
    gap:7rem;
-   padding: 4.2rem;
+   height: 100vh;
+   overflow: hidden;
+   position: absolute;
+   top:50px;
 }
 .all-cards{
     display: flex;

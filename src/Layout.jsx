@@ -10,8 +10,6 @@ function Layout(){
         <div className="index">
         <Header />
         <Outlet />
-
-        
         </div>
     )
 }

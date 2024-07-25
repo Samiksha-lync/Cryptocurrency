@@ -1,12 +1,27 @@
 .main{
     display: flex;
     flex-direction: column;
-    padding: 5rem;
-    justify-content: center;
-    align-items: center;
+    align-items:center;
+    height: 100vh;
+    overflow: hidden;
+}
+.title{
+    position: absolute;
+    top:90px;
+    font-size: 3rem;
+    border-bottom: 1px solid black;
 }
 .buttons-container{
     display: flex;
     align-items: flex-start;
     flex-direction: row;
+}
+.action-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top:170px;
 }
