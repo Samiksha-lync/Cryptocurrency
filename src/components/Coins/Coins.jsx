@@ -9,7 +9,26 @@ const Coins = () => {
     const [error, setError] = useState('');
     const [showAll, setShowAll] = useState(false);
 
- 
+    useEffect(() => {
+        
+        const fetchData = async () => {
+            try {
+                const response = await fetch('https://api.coingecko.com/api/v3/exchanges');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const result = await response.json();
+                setData(result.slice(0,10));  
+                console.log(response);
+            } catch (err) {
+                setError(err.message);  
+            } finally {
+                setLoading(false);  
+            }
+        };
+
+        fetchData();  
+    }, []);  
 
     return(
         <div className="main">
