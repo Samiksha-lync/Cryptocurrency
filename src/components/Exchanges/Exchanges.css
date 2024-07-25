@@ -1,0 +1,87 @@
+.exchanges-container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction:  column;
+   align-items: center;
+   flex-wrap: wrap;
+   gap:7rem;
+   padding: 4.2rem;
+}
+.all-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin:2rem;
+    gap:2.7rem;
+}
+.exchange-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 0.8rem;
+    position: relative;
+    height: 190px;
+    width: 170px;
+    padding: 1.5em 2em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow:0 10px 15px -3px #00000026, 0 4px 6px -2px #0000000d;
+}
+.exchange-item:hover{
+border: 1px solid black;
+transform: scale(1.1) ;
+transition: transform 0.3s ease;
+}
+.exchange-ranking {
+   border-radius: 50%;
+   border:1px solid black;
+   padding: 0.6rem;
+   position: absolute;
+   text-align: center;
+   top:0.6rem;
+   left:0.6rem;
+   height: 19px;
+   width: 15px;
+}
+.exchange-ranking:hover{
+    background-color: black;
+    color:white;
+}
+
+.exchange-img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+button{
+    font-size: 1rem;
+    height:3rem ;
+    width: 13rem;
+    border-radius: 7px;
+    background-color: white;
+    color: black;
+}
+button:hover{
+    background-color: black;
+    color: white;
+    transform: scale(1.1) ;
+transition: transform 0.3s ease-out;
+}
+.exchange-name {
+    font-size: 1rem;
+}
+
+.exchange-link img {
+    width: 20px;
+    height: 20px;
+}
+
+.headings{
+    font-size: 2rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    border-bottom:1px solid black;
+}

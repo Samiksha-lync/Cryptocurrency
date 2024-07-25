@@ -1,0 +1,37 @@
+.main-container{
+    display: flex;
+    flex-direction: row;
+    background-color: #000000d9;
+    height: 100vh;
+    justify-content:space-around;
+    align-items: center;
+    
+}
+.img-container{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    align-items:center ;
+}
+.image{
+    display: flex;
+    justify-content: center;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.heading{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.heading-1{
+    font-size: 1.3rem;
+}
+.data-fields{
+width: 100%;
+}
