@@ -6,7 +6,8 @@
     position: fixed;
     width:100%;
     border-bottom: 0.2px solid rgb(97, 94, 94); 
-    background-color: rgb(67, 63, 63);
+    background-color: #2f2c2cd9;
+    z-index: 1;
 }
 .items a{
     color:rgb(223, 219, 219);

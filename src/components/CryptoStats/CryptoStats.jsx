@@ -50,7 +50,7 @@ const CryptoStats = () => {
 
     return (
         <div className="crypto-stats-container">
-            <div className="crpto-text">
+            <div className="crypto-text">
             <h2>GLOBAL CRYPTO STATS -</h2>
             </div>
             <div className="data-container">

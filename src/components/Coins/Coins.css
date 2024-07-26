@@ -1,11 +1,16 @@
 .crypto-container{
 height: 100vh;
 overflow-x:hidden ;
+display: flex;
+flex-direction: column;
+align-items: center;
+
 } 
-.page-heading{
-    text-align: center;
+.page-heading h1{
     position: relative;
     top: 70px;
+    font-weight:normal;
+    border-bottom: 1px solid black;
 }
 .actions-container{
     display: flex;
@@ -14,6 +19,7 @@ overflow-x:hidden ;
     flex-direction: row;
     position: relative;
     top: 110px;
+    width: 150%;
 }
 .currency-changebtns-container{
     display: flex;
@@ -31,8 +37,8 @@ overflow-x:hidden ;
     gap:5rem;
 }
 .coins-card{
-    height: 190px;
-    width: 200px;
+    height: 220px;
+    width: 180px;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow:0 10px 15px -3px #00000026, 0 4px 6px -2px #0000000d;
@@ -48,23 +54,48 @@ overflow-x:hidden ;
     transition: 0.3s ease linear;
 }
 img{
-    height: 40px;
-    width:40px;
+    height: 80px;
+    width:80px;
 }
 .price-change-container{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:0.5rem;
 }
 .pagination-btns{
     display: flex;
     flex-direction: row;
-    align-items: baseline;
     justify-content: center;
-    gap:1rem;
+    gap:2rem;
+    height: 3rem;
+    width: 15rem;
     position: relative;
-    bottom: -200px;
-
+    bottom: -40px;
 }
+.search-container{
+    height: 2rem;
+    width: 20rem;
+    display:flex;
+}
+.input-search-field{
+   height: 2rem;
+   width: 16rem;
+}
+.search-icon{
+    height: 1.2rem;
+    width: 2rem;
+}
+.search-container button{
+    height: 2rem;
+    width: 3rem;
+    border: 1px solid black;
+    padding: none;
+    position:relative;
+    top:0px;
+}
+
 .name-symbol{
     display: flex;
     flex-direction: column;
@@ -72,21 +103,19 @@ img{
     gap:0px;
     height:27px ;
 }
+.coin-name{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
 
-.search-container button{
-    height: 40px;
-    width: 50px;
+.arrow-img{
+    height: 23px;
+    width: 23px;
 }
-.search-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+@media only screen and (max-width: 1000px) {
+    .actions-container{
+        width: 110%;
+    }
 }
-.search-icon{
-    height: 30px;
-    width: 30px;
-}
-.input-field{
-    height: 40px;
-    width: 220px;
-}
+

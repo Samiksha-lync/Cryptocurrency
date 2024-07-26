@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
+import downIcon from './down.png';
+import neutralIcon from './neutral.png';
+import upIcon from './up.png';
 import icons from './search.png'
 import './Coins.css'
 
@@ -52,6 +54,30 @@ const Card = () => {
         setData(filteredResult);
     };
 
+    const getPriceChangeDetails = (priceChange) => {
+        if (priceChange < 0) {
+            return {
+                className: 'down',
+                imageSrc: downIcon,
+                altText: 'down'
+            };
+        }
+        if (priceChange === 0) {
+            return {
+                className: 'neutral',
+                imageSrc: neutralIcon,
+                altText: 'neutral'
+            };
+        }
+        return {
+            className: 'up',
+            imageSrc: upIcon,
+            altText: 'up'
+        };
+    };
+
+    
+
     return (
         <div className="crypto-container">
             <div className="page-heading">
@@ -100,7 +126,7 @@ const Card = () => {
                 <form className="search-container" onSubmit={handleSearchSubmit}>
                     <input
                         type="search"
-                        className='input-field'
+                        className='input-search-field'
                         name="currency"
                         id="currency"
                         value={searchInput}
@@ -125,32 +151,38 @@ const Card = () => {
                         <p className="error-msg">{error}</p>
                     </div>
                 ) : (
-                    data.map((item) => (
-                        <div key={item.id} className="coins-card">
-                            <div className="coin-img">
-                                <img src={item.image} alt={item.name} />
-                            </div>
-                            <div class="name-symbol">
+                    data.map((item) => {
+                        const { className, imageSrc, altText } = getPriceChangeDetails(item.price_change_percentage_24h);
 
-                            <p className="coin-name">{item.name}</p>
-
-                            <p className="coin-symbol">({item.symbol})</p>
+                        return (
+                            <div key={item.id} className="coins-card">
+                                <div className="coin-img">
+                                    <img src={item.image} alt={item.name} />
+                                </div>
+                                <div className="name-symbol">
+                                    <p className="coin-name">{item.name}</p>
+                                    <p className="coin-symbol">({item.symbol})</p>
+                                </div>
+                                <p className="current-price">
+                                    {currency === 'inr' ? '₹' : currency === 'usd' ? '$' : '€'} {parseFloat(item.current_price).toLocaleString('en-US')}
+                                </p>
+                                <div className={`price-change-container ${className}`}>
+                                    <img src={imageSrc} alt={altText} className="arrow-img" />
+                                    <p className="price-change-value">{item.price_change_percentage_24h.toFixed(2)} %</p>
+                                </div>
                             </div>
-                            <p className="current-price">{currency === 'inr' ? '₹' : currency === 'usd' ? '$' : '€'} {parseFloat(item.current_price).toLocaleString('en-US')}</p>
-
-                            <div className={`price-change-container ${item.price_change_percentage_24h < 0 ? 'down' : item.price_change_percentage_24h === 0 ? 'neutral' : 'up'}`}>
-                                <img src={`../../src/components/Coins/${item.price_change_percentage_24h < 0 ? 'down' : item.price_change_percentage_24h === 0 ? 'neutral' : 'up'}.png`} alt={item.price_change_percentage_24h < 0 ? 'down' : item.price_change_percentage_24h === 0 ? 'neutral' : 'up'} />
-                                
-                                <p className="price-change-value">{item.price_change_percentage_24h.toFixed(2)} %</p>
-                            </div>
-                        </div>
-                    ))
+                        );
+                    })
                 )}
             </div>
 
             <div className="pagination-btns">
+                <div>
                 <button onClick={handlePreviousClick} id="previous" disabled={page === 1}>Previous</button>
+                </div>
+                <div>
                 <button onClick={handleNextClick} id="next" disabled={page === 50}>Next</button>
+                </div>
             </div>
         </div>
     );
