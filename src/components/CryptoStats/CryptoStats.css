@@ -4,6 +4,8 @@
     max-width: 600px;
     border-radius: 8px;
     gap:2rem;
+    align-items: center;
+    justify-content: center;
 }
 
 h2 {

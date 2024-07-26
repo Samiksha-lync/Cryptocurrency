@@ -56,8 +56,8 @@ const Exchanges = () => {
 
     if (error) {
         return (
-            <p className="error-msg">
-           ERROR!!! <br />
+            <p className="exchange-error-msg">
+           ERROR RETRIEVING THE DATA!! <br />
             
         </p>
         );  
