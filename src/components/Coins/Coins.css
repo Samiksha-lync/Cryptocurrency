@@ -4,11 +4,10 @@ overflow-x:hidden ;
 display: flex;
 flex-direction: column;
 align-items: center;
+gap:2rem;
 
 } 
 .page-heading h1{
-    position: relative;
-    top: 70px;
     font-weight:normal;
     border-bottom: 1px solid black;
 }
@@ -17,8 +16,7 @@ align-items: center;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
-    position: relative;
-    top: 110px;
+   
     width: 150%;
 }
 .currency-changebtns-container{
@@ -28,8 +26,7 @@ align-items: center;
 }
 
 .coins-card-container{
-    position: relative;
-    top: 150px;
+   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,8 +68,7 @@ img{
     gap:2rem;
     height: 3rem;
     width: 15rem;
-    position: relative;
-    bottom: -40px;
+    margin-bottom: 30px;
 }
 .search-container{
     height: 2rem;
@@ -82,11 +78,14 @@ img{
 .input-search-field{
    height: 2rem;
    width: 16rem;
+   padding:0.5rem;
 }
 .search-icon{
-    height: 1.2rem;
-    width: 2rem;
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius:none;
 }
+
 .search-container button{
     height: 2rem;
     width: 3rem;
@@ -115,7 +114,11 @@ img{
 
 @media only screen and (max-width: 1000px) {
     .actions-container{
-        width: 110%;
+        flex-direction: column;
+        gap:1rem;
+    }
+    .coins-card-container{
+        flex-direction: column;
     }
 }
 
