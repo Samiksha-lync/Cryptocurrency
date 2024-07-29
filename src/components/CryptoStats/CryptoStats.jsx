@@ -28,7 +28,7 @@ const CryptoStats = () => {
         fetchData();  
     }, []);  
     if (loading) {
-        return <div>Loading...</div>;  
+        return <div className='load'>Loading...</div>;  
     }
 
     if (error) {

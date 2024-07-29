@@ -25,11 +25,11 @@ function Home(){
                     </div>
                 </div>
             </div>
-            <div className="data-fields">
+            
                 <CryptoStats />
                 
 
-            </div>
+            
         </div>
 
 

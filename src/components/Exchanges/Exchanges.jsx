@@ -72,7 +72,7 @@ const Exchanges = () => {
     return (
     <div className="exchanges-container">
             <div className="headings">
-                Top Exchanges
+               <h1> Top Exchanges </h1>
             </div>
             <div className="all-cards">
 
@@ -82,6 +82,8 @@ const Exchanges = () => {
                     <div className="exchange-ranking">
                         {exchange.trust_score_rank}
                     </div>
+
+                    <div className="all-3">
 
                     <div className="exchange-img">
                         <img src={exchange.image} alt={exchange.name} />
@@ -94,6 +96,7 @@ const Exchanges = () => {
                             <img src={icon} alt="link" />
                         </a>
                     </span>
+                    </div>
                 </div>    
             ))}
         </div>
