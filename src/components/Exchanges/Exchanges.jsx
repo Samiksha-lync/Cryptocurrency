@@ -92,7 +92,7 @@ const Exchanges = () => {
                     <p title={exchange.name} className="exchange-name">{exchange.name}</p>
 
                     <span className="exchange-link">
-                        <a href={exchange.url} target="_blank">
+                        <a href={exchange.url} target="_blank" rel="noopener noreferrer">
                             <img src={icon} alt="link" />
                         </a>
                     </span>

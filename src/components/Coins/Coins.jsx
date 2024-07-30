@@ -13,10 +13,7 @@ const Card = () => {
     const [page, setPage] = useState(1);
     const [searchInput, setSearchInput] = useState('');
 
-    useEffect(() => {
-        fetchData();
-    }, [currency, page]); 
-
+   
     const fetchData = async () => {
         try {
             const response = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=${page}`);
@@ -31,6 +28,9 @@ const Card = () => {
             setLoading(false);
         }
     };
+    useEffect(() => {
+        fetchData();
+    }, [currency, page]); 
 
     const handlePreviousClick = () => {
         if (page > 1) {
