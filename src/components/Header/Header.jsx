@@ -15,14 +15,14 @@ function Header(){
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/Coins"
+                                <NavLink to="Coins"
                                  className=""
                                 > 
                                 COINS
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink  to ="/Exchanges"
+                                <NavLink  to ="Exchanges"
                                  className=""
                                 > 
                                 EXCHANGES
