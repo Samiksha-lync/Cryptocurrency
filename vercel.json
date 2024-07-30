@@ -1,5 +1,22 @@
 {
- "rewrites":[
-     {"source": "/(.*)" , "destination": "/"}
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.js",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/cryptocurrency/(.*)",
+      "dest": "/cryptocurrency/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
