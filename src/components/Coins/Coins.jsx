@@ -4,6 +4,7 @@ import neutralIcon from './neutral.png';
 import upIcon from './up.png';
 import icons from './search.png'
 import './Coins.css'
+import { useNavigate } from 'react-router-dom';
 
 const Card = () => {
     const [data, setData] = useState([]);
@@ -12,6 +13,7 @@ const Card = () => {
     const [currency, setCurrency] = useState('inr');
     const [page, setPage] = useState(1);
     const [searchInput, setSearchInput] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
     const fetchData = async () => {
@@ -75,6 +77,9 @@ const Card = () => {
             altText: 'up'
         };
     };
+    const handleCardClick =(id) =>{
+        navigate(`/coininfo/${id}`);
+    }
 
     
 
@@ -155,7 +160,9 @@ const Card = () => {
                         const { className, imageSrc, altText } = getPriceChangeDetails(item.price_change_percentage_24h);
 
                         return (
-                            <div key={item.id} className="coins-card">
+                            <div key={item.id} className="coins-card"
+                            onClick={()=> handleCardClick(item.id)}
+                            >
                                 <div className="coin-img">
                                     <img src={item.image} alt={item.name} />
                                 </div>
