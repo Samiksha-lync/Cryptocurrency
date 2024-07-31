@@ -79,7 +79,7 @@
   
 }
 
-@media (max-height: 850px){
+@media (max-height: 850px)and (max-width:900px){
   .main-container{
     position: relative;
     top:60px;
