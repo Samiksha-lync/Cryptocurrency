@@ -79,7 +79,7 @@
   
 }
 
-@media (max-height: 850px)and (max-width:900px){
+/*@media (max-height: 850px)and (max-width:800px){
   .main-container{
     position: relative;
     top:60px;
@@ -101,4 +101,4 @@
 .heading-1{
   font-size: 0.8rem;
 }  
-}
+}*/
