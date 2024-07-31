@@ -79,11 +79,12 @@
   
 }
 
-/*@media (max-height: 850px)and (max-width:800px){
+@media(max-height: 850px)and (max-width:900px){
   .main-container{
     position: relative;
     top:60px;
     height: 100vh;
+    overflow: hidden;
   }
  .img-container{
   height: 10%;
@@ -92,8 +93,8 @@
   top:-30px;
  }
  .image-1{
-  height:150px;
-  width: 150px;
+  height:200px;
+  width: 200px;
  }
  .text .heading{
   font-size: 2rem;
@@ -101,4 +102,15 @@
 .heading-1{
   font-size: 0.8rem;
 }  
-}*/
+}
+
+@media(min-width:1000px) and (max-width:1500px){
+  .main-container{
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap:2rem;
+  }
+}
