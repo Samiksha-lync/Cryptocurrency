@@ -36,6 +36,7 @@ function Coininfo() {
     <div className='coin-data'>
       <h1>{coinData?.name}</h1>
       <h2>{coinData?.symbol|| 'symbol not available'}</h2>
+      <h3>Market_cap_rank:{coinData?.market_cap_rank}</h3>
       <p>{coinData?.description?.en}</p>
     </div>
   );

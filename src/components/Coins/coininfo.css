@@ -7,6 +7,12 @@
     display: grid;
     place-content: center;
 }
+.coin-data h3{
+    display: grid;
+    place-content: center;
+    font-size: 1.5rem;
+    font-family: cursive;
+}
 
 .coin-data{
     position: relative;
