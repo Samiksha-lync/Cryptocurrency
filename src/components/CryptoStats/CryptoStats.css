@@ -77,3 +77,13 @@ h2 {
         font-size: 1.2rem;
     }
 }
+@media (max-height: 800px){
+    .crypto-text h2{
+        font-size:1.2rem;
+    }
+    .content{
+        padding: 13px;
+        width: 310px;
+        font-size: 1rem;
+    }
+}
