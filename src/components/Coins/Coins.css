@@ -28,7 +28,11 @@ top:70px;
     gap:1rem;
     
 }
-
+.currency-change-btns{
+    display: flex;
+    flex-direction: row;
+    gap:0.3rem;
+}
 .coins-card-container{
    
     display: flex;
