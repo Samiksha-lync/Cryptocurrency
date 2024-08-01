@@ -13,7 +13,7 @@ function Coininfo() {
       try {
         const response = await fetch(`https://api.coingecko.com/api/v3/coins/${id}`);
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error('Invalid Data Request');
         }
         const data = await response.json();
         setCoinData(data);
@@ -28,16 +28,19 @@ function Coininfo() {
   }, [id]);
 
   if (loading)
-     return <div>Loading...</div>;
+     return <div className='display-loading'>Loading...</div>;
   if (error) 
-    return <div>Error: {error.message}</div>;
+    return <div className='display-error-msg'>Error: {error.message}</div>;
 
   return (
     <div className='coin-data'>
       <h1>{coinData?.name}</h1>
-      <h2>{coinData?.symbol|| 'symbol not available'}</h2>
-      <h3>Market_cap_rank:{coinData?.market_cap_rank}</h3>
+      <h2 className='symb'>Symbol:-{' '}{coinData?.symbol|| 'symbol not available'}</h2>
+      <h3>Market_cap_rank:-{' '}{coinData?.market_cap_rank}</h3>
+      <div className='description'>
+        <h4>Description about {coinData?.name}{' '}:-</h4>
       <p>{coinData?.description.en}</p>
+      </div>
     </div>
   );
 }
